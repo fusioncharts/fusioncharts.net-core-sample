@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!--
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+-->
+<div class="row">
+    <div class="col-md-4">
+        <h3>Please click on a sample below</h3>
+        <div style="margin-left: 25px;">
+            <select style="border:hidden;" onchange="loadPageInIFrame(this);" size="30">
+                <optgroup label="Chart Type Samples">
+                    <option value='@Url.Action("ColumnChart", "Home")'>Column Chart</option>
+                    <option value='@Url.Action("BarChart", "Home")'>Bar Chart</option>
+                    <option value='@Url.Action("LineChart", "Home")'>Line Chart</option>
+                    <option value='@Url.Action("SplineChart", "Home")'>Spline Chart</option>
+                    <option value='@Url.Action("AreaChart", "Home")'>Area Chart</option>
+                    <option value='@Url.Action("PieChart", "Home")'>Pie Chart</option>
+                    <option value='@Url.Action("DoughnutChart", "Home")'>Donut Chart</option>
+                    <option value='@Url.Action("ThreeDChart", "Home")'>3D Chart</option>
+                    <option value='@Url.Action("StackedChart", "Home")'>Stacked Chart</option>
+                    <option value='@Url.Action("ScrollableChart", "Home")'>Scroll Chart</option>
+                    <option value='@Url.Action("OverlappedChart", "Home")'>Overlapped Chart (Bar)</option>
+                    <option value='@Url.Action("PyramidChart", "Home")'>Pyramid Chart</option>
+                    <option value='@Url.Action("FunnelChart", "Home")'>Funnel Chart</option>
+
+                    <option value='@Url.Action("SingleYCombi2D", "Home")'>Single Y-axis Combination Chart 2D</option>
+                    <option value='@Url.Action("SingleYCombi3D", "Home")'>Single Y-axis Combination Chart 3D</option>
+                    <option value='@Url.Action("DualYCombi2D", "Home")'>Dual Y-axis Combination Chart 2D</option>
+                    <option value='@Url.Action("SingleYScrollCombi2D", "Home")'>Single Y-axis Scroll Combination Chart</option>
+                    <option value='@Url.Action("DualYScrollCombi2D", "Home")'>Dual Y-axis Scroll Combination Chart</option>
+                </optgroup>
+                <optgroup label="TimeSeries Samples">
+                    <option value='@Url.Action("TimeSeriesSingleSeries", "Home")'>Single Series</option>
+                    <option value='@Url.Action("TimeSeriesMultiSeries", "Home")'>Multiple Data Plots</option>
+                    <option value='@Url.Action("TimeSeriesMultiVariate", "Home")'>MultiVariate Chart</option>
+                    <option value='@Url.Action("TimeSeriesDualY", "Home")'>MultiVariate Chart, single Canvas</option>
+                </optgroup>
+                    <optgroup label="Chart Components Samples">
+                        <option value='@Url.Action("SeriesCustomization", "Home")'>Series Customization</option>
+                        <option value='@Url.Action("ValueAndLabelFormatting", "Home")'>Value and Label Format</option>
+                        <option value='@Url.Action("CategoryFormatting", "Home")'>Category Format</option>
+                        <option value='@Url.Action("ConditionalValueFormatting", "Home")'>Conditional value Formatting</option>
+                        <option value='@Url.Action("ChartConfigCustomization", "Home")'>Chart Config</option>
+                        <option value='@Url.Action("LegendTooltipConfig", "Home")'>Legend and Tooltip</option>
+                        <option value='@Url.Action("ExportSettings", "Home")'>Export</option>
+                    </optgroup>
+                    <optgroup label="Events Samples">
+                        <option value='@Url.Action("DataLoadEvents", "Home")'>Data Load</option>
+                        <option value='@Url.Action("PieChartsEvents", "Home")'>Special Event</option>
+                        <option value='@Url.Action("ScrollChartsEvents", "Home")'>Scroll Event</option>
+                        <option value='@Url.Action("RenderedEvents", "Home")'>Chart Render Event</option>
+                        <option value='@Url.Action("GenericEvents", "Home")'>Common Event</option>
+                    </optgroup>
+                    <optgroup label="Data Engine Samples">
+                        <option value='@Url.Action("GroupingwithAggregation", "Home")'>Grouping and Aggregating</option>
+                        <option value='@Url.Action("OrderByClause", "Home")'>Sorting Fields</option>
+                        <option value='@Url.Action("ExtractTopNRecords", "Home")'>Retrieve top Rows</option>
+                        <option value='@Url.Action("SelectFields", "Home")'>Filtering Fields</option>
+                        <option value='@Url.Action("RowFilters", "Home")'>Filtering Rows</option>
+                        <option value='@Url.Action("PivotOperation", "Home")'>Pivot Your Data</option>
+                        <option value='@Url.Action("CalculatedColumnsExample", "Home")'>Add Calculated column</option>
+                    </optgroup>
+                    <optgroup label="Page level Theme Example">
+                        <option value='@Url.Action("CommonTheme", "Home")'>Common Theme</option>
+                    </optgroup>
+</select>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h3 id="exampleHead">Example:</h3>
+        <iframe id="sampleFrame" style="width:100%;height:700px;border:hidden;"></iframe>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function loadPageInIFrame(c) {
+        jQuery('#exampleHead').text('Example: ' + c.options[c.selectedIndex].text + '(' + c.options[c.selectedIndex].value + ')');
+        jQuery('#sampleFrame')[0].src = c.options[c.selectedIndex].value;
+    }
+</script>

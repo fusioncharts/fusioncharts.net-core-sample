@@ -1,0 +1,13 @@
+﻿@{ Layout = null; }
+<html>
+<head>
+    <script src="@Url.Content("/lib/FusionCharts/fusionCharts.js")"></script>
+    <script src="@Url.Content("/lib/FusionCharts/fusionCharts.timeseries.js")"></script>
+    <script src="@Url.Content("/lib/FusionCharts/themes/fusioncharts.theme.fusion.js")"></script>
+</head>
+<body>
+    <div>
+        <div id="chartContainer">@Html.Raw(ViewData["Chart"])</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@{ Layout = null; }
+<html>
+<head>
+    <script src="@Url.Content("/lib/FusionCharts/fusioncharts.js")"></script>
+    <script src="@Url.Content("/lib/FusionCharts/themes/fusioncharts.theme.zune.js")"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div id="chartContainer1">@Html.Raw(ViewData["Chart1"])</div>
+            </td>
+            <td style="text-align:right">
+                <div style="text-align:right" id="chartContainer2">@Html.Raw(ViewData["Chart2"])</div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

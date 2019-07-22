@@ -1,0 +1,19 @@
+@{ Layout = null; }
+<html>
+<head>
+    <script src="@Url.Content("/lib/FusionCharts/FusionCharts.js")"></script>
+    <script src="@Url.Content("/lib/FusionCharts/themes/fusioncharts.theme.fusion.js")"></script>
+</head>
+<body>
+    <div>
+        <div id="chartContainer">@Html.Raw(ViewData["Chart"])</div>
+        <div id="eventInfo"></div>
+    </div>
+    <script type="text/javascript">
+        var OnDataLoaded = function (eventObj) {
+
+            document.getElementById("eventInfo").innerText = "Chart data loaded successfully";
+        };
+    </script>
+</body>
+</html>

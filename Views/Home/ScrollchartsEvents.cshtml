@@ -1,0 +1,22 @@
+@{ Layout = null; }
+<html>
+<head>
+    <script src="@Url.Content("/lib/FusionCharts/FusionCharts.js")"></script>
+    <script src="@Url.Content("/lib/FusionCharts/themes/fusioncharts.theme.fusion.js")"></script>
+</head>
+<body>
+    <div>
+        <div id="chartContainer">@Html.Raw(ViewData["Chart"])</div>
+        <div id="eventInfo">Please try scrolling the chart</div>
+    </div>
+    <script type="text/javascript">
+        var OnScrollEnd = function (eventObj) {
+            document.getElementById("eventInfo").innerText = "You have just stopped scrolling";
+        };
+        var OnScrollStart = function (eventObj) {
+
+            document.getElementById("eventInfo").innerText = "";
+        };
+    </script>
+</body>
+</html>
